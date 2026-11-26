@@ -1,0 +1,107 @@
+* { box-sizing: border-box; }
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #fdf8f8;
+  color: #222;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Cherry Red Header */
+header {
+  background: #9B111E;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  border-bottom: 4px solid #1B5E20;
+}
+header h1 { margin: 0 0 6px; font-size: 1.6rem; }
+header p { margin: 0; font-size: 0.9rem; opacity: 0.95; }
+
+main { 
+  max-width: 1000px; 
+  width: 100%;
+  margin: 20px auto; 
+  padding: 0 12px; 
+  flex: 1;
+}
+
+/* Search Box with Green Focus Accent */
+#searchBox {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  border: 2px solid #2E7D32;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  outline: none;
+}
+#searchBox:focus {
+  border-color: #9B111E;
+  box-shadow: 0 0 5px rgba(155, 17, 30, 0.3);
+}
+
+#status { font-weight: bold; color: #1B5E20; }
+#status.err { color: #9B111E; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+th, td { 
+  padding: 10px 12px; 
+  text-align: left; 
+  border-bottom: 1px solid #e0e0e0; 
+}
+
+/* Forest Green Table Headings */
+th { 
+  background: #1B5E20; 
+  color: #fff; 
+  cursor: pointer; 
+  user-select: none; 
+}
+th:hover { background: #2E7D32; }
+
+/* Soft Mint-Green Alternating Rows */
+tr:nth-child(even) td { background: #f1f8f3; }
+
+/* Cherry Red Footer */
+footer {
+  background: #9B111E;
+  color: #fff;
+  text-align: center;
+  padding: 16px 12px;
+  margin-top: 30px;
+  font-size: 0.95rem;
+  border-top: 4px solid #1B5E20;
+}
+footer p { margin: 0; }
+
+/* Phones: show each row as a card */
+@media (max-width: 600px) {
+  thead { display: none; }
+  table, tbody, tr, td { display: block; width: 100%; }
+  tr { 
+    margin-bottom: 12px; 
+    border: 1px solid #2E7D32; 
+    border-left: 5px solid #9B111E;
+    border-radius: 6px; 
+    background: #fff; 
+  }
+  td { 
+    display: flex; 
+    justify-content: space-between; 
+    border-bottom: 1px solid #eee; 
+  }
+  td::before { 
+    content: attr(data-label); 
+    font-weight: bold; 
+    color: #1B5E20; 
+    margin-right: 12px; 
+  }
+}
